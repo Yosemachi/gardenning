@@ -12,6 +12,8 @@ import TaskShowComponent from "./components/TaskShowComponent";
 import TaskCreateComponent from "./components/TaskCreateComponent";
 import TaskEditComponent from "./components/TaskEditComponent";
 
+import PlantIndexComponent from "./components/plant/index";
+
 window.Vue = require('vue').default;
 
 /**
@@ -57,6 +59,11 @@ Vue.component('header-component', HeaderComponent);
           path: '/tasks/:taskId/edit',
           name: 'task.edit',
           component: TaskEditComponent
+        },
+        {
+          path: '/plant/index',
+          name: 'plant.index',
+          component: PlantIndexComponent
         },
     ]
  });

@@ -26,4 +26,4 @@ Route::put('/tasks/{task}', [TaskController::class, 'update']);
 Route::delete('/tasks/{task}', [TaskController::class, 'destroy']);
 
 // Plants
-// Route::get('/plant/index', [Plant/PlantController::class, 'index']);
+Route::get('/plant/index', [PlantController::class, 'index']);

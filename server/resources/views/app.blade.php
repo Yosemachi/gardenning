@@ -11,7 +11,6 @@
 
    <!-- Styles -->
    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
-   <script src="https://docs.opencv.org/4.5.2/opencv.js"></script>
 </head>
 <body>
 <div id="app">

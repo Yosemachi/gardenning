@@ -30,6 +30,8 @@
 </template>
 
 <script>
+import analyze from 'rgbaster';
+
    export default {
      data: function(){
        return {
@@ -40,6 +42,9 @@
      methods: {
       onFileChange(e){
        const files = e.target.files;
+       // console.log(files);
+       // const aaa = analyze(files[0]);
+       // console.log(aaa);
        if(files.length > 0){
          const file = files[0];
          const reader = new FileReader();
@@ -50,11 +55,17 @@
        }
       },
       transform(){
-        const imageElement = document.querySelector('#img');
-        const im = cv.imread(imageElement);
-        // console.log(im);
-        const imgcolor = cv.cvtColor(im, im, cv.COLOR_BGR2GRAY);
-        console.log(imgcolor);
+        const sample = analyze(document.getElementById('img'));
+        console.log(sample[0].color);
+        // analyze.colors(sample, {
+        //   paletteSize: 30,
+        //   exclude: ['rgb(0,0,0)'],
+        //   success: function(payload){
+        //     console.log(payload.dominant);
+        //     console.log(payload.secondary);
+        //     console.log(payload.palette);
+        //   }
+        // });
       },
       submit(){
        axios.post('/api/tasks', this.task)
