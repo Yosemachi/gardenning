@@ -4,14 +4,21 @@ namespace App\Http\Controllers\Plant;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Plants;
 
-class Plantcontroller extends Controller
+class PlantController extends Controller
 {
     public function index(){
-      return Plant::get();
+      return Plants::get();
     }
 
     public function show($id){
-      return Plant::find($id)->get();
+      return Plants::find($id)->get();
     }
+
+    public function save(Request $request){
+      dd($request->all());
+      return Plants::create($request->all());
+    }
+
 }

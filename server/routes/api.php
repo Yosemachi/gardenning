@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\plant\PlantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,4 @@ Route::delete('/tasks/{task}', [TaskController::class, 'destroy']);
 
 // Plants
 Route::get('/plant/index', [PlantController::class, 'index']);
+Route::post('/plant/index', [PlantController::class, 'save']);
