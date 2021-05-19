@@ -4,9 +4,7 @@
       <ul>
         <!-- <input type="text" class="" value="" v-model="plant.plant_name"> -->
         <!-- <input type="hidden" value="1" v-model="plant.user_id"> -->
-        <router-link v-bind:to="{name: 'plant.create'}">
-          <button class="btn btn-primary">登録ページ</button>
-        </router-link>
+        <button v-on:click="save" class="btn btn-primary">登録</button>
       </ul>
       <ul v-for="(plant, index) in plants" :key="index">
         <div>{{ index }}</div>
